@@ -1,0 +1,33 @@
+{
+  "policy_version": "2026.11.0",
+  "note": "Written as a labelling policy, separately from the engine. The oracle reads ONLY this file and structured facts, never case text and never the engine or glossary. Limits are illustrative lab values, not clinical, actuarial or lending guidance.",
+  "severity": {
+    "medical_logistics": {"xm_positive": "critical", "xm_negative": "clear", "marginal_donor": "review"},
+    "insurance_claims": {"exclusion": "critical", "siu": "critical", "covered_loss": "neutral"},
+    "mortgage_lending": {"negam": "critical", "ctc": "clear", "conditional": "review"},
+    "retail_supply_chain": {"recall_hold": "critical", "pos_variance": "review", "cold_product": "neutral"}
+  },
+  "fields": {
+    "cold_ischemia_elapsed": {"kind": "duration", "unit": "h", "limit": 24, "warn_at_remaining": 6},
+    "days_since_loss": {"kind": "duration", "unit": "d", "limit": 30, "warn_at_remaining": 0},
+    "rate_lock_elapsed": {"kind": "duration", "unit": "d", "limit": 45, "warn_at_remaining": 5},
+    "temp_excursion_elapsed": {"kind": "duration", "unit": "min", "limit": 30, "warn_at_remaining": 0},
+    "product_temp": {"kind": "temperature", "unit": "C", "low": 2, "high": 8, "warn_margin": 0.5}
+  },
+  "unit_seconds": {"s": 1, "min": 60, "h": 3600, "d": 86400, "wk": 604800},
+  "rules": [
+    "Critical finding, stated as fact and not negated -> block (also when misspelled, translated or paraphrased).",
+    "Critical finding that is negated or hedged -> escalate (a person confirms; the agent never acts on a negated critical).",
+    "Review finding in any form -> escalate.",
+    "Clear finding -> proceed only when stated as fact, not negated, not hedged and spelled correctly; otherwise escalate.",
+    "Proceed also needs something that clears the action: a clear finding or a valid structured reading.",
+    "Reading malformed, in an ambiguous or unsupported unit, or reported in the opposite direction -> escalate.",
+    "Reading past its limit -> block; inside the warning band -> escalate.",
+    "Reading found only in free text -> may block, otherwise escalate; text and structured values that disagree -> escalate.",
+    "A field is named in the text but no reading is supplied -> escalate.",
+    "A critical term from another domain appears in the text -> escalate (routing may be wrong).",
+    "An abbreviation with more than one meaning in the domain -> escalate.",
+    "Nothing recognisable in the text and no reading -> escalate.",
+    "Strictest outcome wins: block > escalate > proceed."
+  ]
+}
