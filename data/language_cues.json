@@ -1,0 +1,34 @@
+{
+  "note": "Negation and hedge cues per language, after accent folding. Scope: same comma-delimited segment, up to 3 tokens before a term, inside a frame, or up to 2 tokens after.",
+  "negation_pre": {
+    "en": ["not", "no", "never", "without", "none", "nor", "neither", "isnt", "wasnt", "arent", "werent", "doesnt", "dont", "didnt", "cannot", "cant", "ruled"],
+    "es": ["no", "sin", "nunca", "ningun", "ninguna", "tampoco"],
+    "fr": ["pas", "ne", "n", "aucun", "aucune", "sans", "jamais", "non"],
+    "de": ["nicht", "kein", "keine", "keinen", "keiner", "keines", "ohne", "nie"]
+  },
+  "negation_post": {
+    "en": ["lifted", "released", "removed", "withdrawn", "revoked", "rescinded", "cleared", "resolved", "ruled", "not", "negated"],
+    "es": ["levantada", "levantado", "retirada", "retirado", "anulada", "anulado"],
+    "fr": ["levee", "leve", "retire", "retiree", "annule", "annulee"],
+    "de": ["aufgehoben", "zuruckgezogen", "widerrufen"]
+  },
+  "hedge_pre": {
+    "en": ["if", "once", "when", "possible", "possibly", "probable", "probably", "likely", "maybe", "may", "might", "could", "should", "would", "suspected", "suspect", "presumed", "presumably", "preliminary", "unconfirmed", "assuming", "unless", "potential", "potentially", "awaiting", "expected", "expect", "pending"],
+    "es": ["si", "posible", "posiblemente", "probable", "probablemente", "quizas", "pendiente", "cuando"],
+    "fr": ["si", "possible", "probable", "probablement", "peut", "attente", "lorsque", "quand"],
+    "de": ["falls", "wenn", "moglich", "moglicherweise", "vielleicht", "voraussichtlich", "ausstehend"]
+  },
+  "hedge_post": {
+    "en": ["pending", "expected", "suspected", "tbc", "tbd", "unconfirmed", "awaited", "likely", "possible"],
+    "es": ["pendiente", "probable", "posible"],
+    "fr": ["probable", "possible"],
+    "de": ["ausstehend", "moglich", "erwartet"]
+  },
+  "direction_remaining": ["remaining", "left", "to go", "restantes", "restante", "restant", "restants", "verbleibend", "ubrig"],
+  "stopwords": {
+    "en": ["the", "is", "and", "of", "on", "for", "was", "to", "a", "with", "from", "this", "status", "update"],
+    "es": ["el", "la", "de", "es", "y", "en", "para", "con", "del", "los", "las", "una", "un", "todo", "bien", "por"],
+    "fr": ["le", "la", "les", "est", "et", "du", "des", "pour", "sur", "une", "un", "pas", "de", "tout", "va", "bien"],
+    "de": ["der", "die", "das", "ist", "und", "nicht", "fur", "mit", "ein", "eine", "kein", "alles", "gut", "von"]
+  }
+}

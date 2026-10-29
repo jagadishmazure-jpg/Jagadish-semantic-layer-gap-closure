@@ -1,0 +1,16 @@
+{
+  "contracts_version": "2026.11.0",
+  "note": "Synthetic lab limits. Not clinical, actuarial or lending guidance.",
+  "fields": {
+    "cold_ischemia_elapsed": {"domain": "medical_logistics", "kind": "duration", "definition": "Hours elapsed since cross-clamp and cooling.",
+      "direction": "elapsed", "unit": "h", "limit": 24, "warn_at_remaining": 6, "origin_system": "organ-tracking (fictional)"},
+    "days_since_loss": {"domain": "insurance_claims", "kind": "duration", "definition": "Days elapsed between loss date and report date.",
+      "direction": "elapsed", "unit": "d", "limit": 30, "warn_at_remaining": 0, "origin_system": "claims-intake (fictional)"},
+    "rate_lock_elapsed": {"domain": "mortgage_lending", "kind": "duration", "definition": "Days used of a 45-day rate lock.",
+      "direction": "elapsed", "unit": "d", "limit": 45, "warn_at_remaining": 5, "origin_system": "pricing-engine (fictional)"},
+    "temp_excursion_elapsed": {"domain": "retail_supply_chain", "kind": "duration", "definition": "Minutes outside 2-8 C band.",
+      "direction": "elapsed", "unit": "min", "limit": 30, "warn_at_remaining": 0, "origin_system": "reefer-telemetry (fictional)"},
+    "product_temp": {"domain": "retail_supply_chain", "kind": "temperature", "definition": "Product core temperature for chilled goods.",
+      "unit": "C", "low": 2, "high": 8, "warn_margin": 0.5, "origin_system": "probe-thermometer (fictional)"}
+  }
+}

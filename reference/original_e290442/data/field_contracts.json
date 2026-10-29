@@ -1,0 +1,14 @@
+{
+  "contracts_version": "2026.10.1",
+  "note": "Synthetic lab limits. Not clinical, actuarial or lending guidance.",
+  "fields": {
+    "cold_ischemia_elapsed": {"domain": "medical_logistics", "definition": "Hours elapsed since cross-clamp and cooling.",
+      "direction": "elapsed", "unit": "h", "limit": 24, "warn_at_remaining": 6, "origin_system": "organ-tracking (fictional)"},
+    "days_since_loss": {"domain": "insurance_claims", "definition": "Days elapsed between loss date and report date.",
+      "direction": "elapsed", "unit": "d", "limit": 30, "warn_at_remaining": 0, "origin_system": "claims-intake (fictional)"},
+    "rate_lock_elapsed": {"domain": "mortgage_lending", "definition": "Days used of a 45-day rate lock.",
+      "direction": "elapsed", "unit": "d", "limit": 45, "warn_at_remaining": 5, "origin_system": "pricing-engine (fictional)"},
+    "temp_excursion_elapsed": {"domain": "retail_supply_chain", "definition": "Minutes outside 2-8 C band.",
+      "direction": "elapsed", "unit": "min", "limit": 30, "warn_at_remaining": 0, "origin_system": "reefer-telemetry (fictional)"}
+  }
+}

@@ -1,0 +1,24 @@
+[project]
+name = "semgap"
+version = "0.1.0"
+description = "Gap closure for a governed semantic engineering layer: negation, hedging, typos, multilingual, units, governance, drift, held-out evaluation. Synthetic data, fictional companies."
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = []
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+extend-exclude = ["reference"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+# labeling/ is frozen with the held-out split (commit 6fbb66f); style edits there would muddy the audit trail
+"labeling/*" = ["E501", "B007"]
+"scripts/brand_check.py" = ["E501"]

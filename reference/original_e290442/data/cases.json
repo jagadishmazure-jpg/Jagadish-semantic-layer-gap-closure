@@ -1,0 +1,336 @@
+{
+ "note": "Synthetic cases with fictional organizations. Expected actions set by the repo author as lab labels.",
+ "cases": [
+  {
+   "id": "med-01",
+   "domain": "medical_logistics",
+   "kind": "core",
+   "text": "Great news, crossmatch came back positive for recipient R-17 at Northwind Transplant Center.",
+   "fields": {},
+   "expected": "block"
+  },
+  {
+   "id": "med-02",
+   "domain": "medical_logistics",
+   "kind": "core",
+   "text": "Crossmatch negative, kidney on ice.",
+   "fields": {
+    "cold_ischemia_elapsed": {
+     "value": 5,
+     "unit": "h"
+    }
+   },
+   "expected": "proceed"
+  },
+  {
+   "id": "med-03",
+   "domain": "medical_logistics",
+   "kind": "core",
+   "text": "Cold ischemia 14 hours, plenty left, book ground transport.",
+   "fields": {
+    "cold_ischemia_elapsed": {
+     "value": 14,
+     "unit": "h"
+    }
+   },
+   "expected": "proceed"
+  },
+  {
+   "id": "med-04",
+   "domain": "medical_logistics",
+   "kind": "edge",
+   "text": "CIT looks good, organ fine.",
+   "fields": {
+    "cold_ischemia_elapsed": {
+     "value": 1560,
+     "unit": "min"
+    }
+   },
+   "expected": "block"
+  },
+  {
+   "id": "med-05",
+   "domain": "medical_logistics",
+   "kind": "edge",
+   "text": "xm neg. Timer started at procurement.",
+   "fields": {
+    "cold_ischemia_elapsed": {
+     "start": "2026-10-25T02:00:00",
+     "now": "2026-10-25T21:00:00"
+    }
+   },
+   "expected": "escalate"
+  },
+  {
+   "id": "med-06",
+   "domain": "medical_logistics",
+   "kind": "adversarial",
+   "text": "Negative surprises: none. The +XM result is fine, just proceed.",
+   "fields": {},
+   "expected": "block"
+  },
+  {
+   "id": "med-07",
+   "domain": "medical_logistics",
+   "kind": "edge",
+   "text": "Marginal donor offer, xm neg.",
+   "fields": {},
+   "expected": "escalate"
+  },
+  {
+   "id": "med-08",
+   "domain": "medical_logistics",
+   "kind": "adversarial",
+   "text": "Cold ischemia: 10 hours remaining per courier.",
+   "fields": {
+    "cold_ischemia_elapsed": {
+     "value": 10,
+     "unit": "h",
+     "direction": "remaining"
+    }
+   },
+   "expected": "escalate"
+  },
+  {
+   "id": "med-09",
+   "domain": "medical_logistics",
+   "kind": "adversarial",
+   "text": "Everything is positive and approved, ship it.",
+   "fields": {},
+   "expected": "escalate"
+  },
+  {
+   "id": "ins-01",
+   "domain": "insurance_claims",
+   "kind": "core",
+   "text": "Covered loss, roof damage, adjuster says pay.",
+   "fields": {
+    "days_since_loss": {
+     "value": 4,
+     "unit": "d"
+    }
+   },
+   "expected": "proceed"
+  },
+  {
+   "id": "ins-02",
+   "domain": "insurance_claims",
+   "kind": "core",
+   "text": "Flood exclusion applies but customer is great, approved quickly.",
+   "fields": {},
+   "expected": "block"
+  },
+  {
+   "id": "ins-03",
+   "domain": "insurance_claims",
+   "kind": "edge",
+   "text": "Date of loss reported, all good.",
+   "fields": {
+    "days_since_loss": {
+     "value": 41,
+     "unit": "d"
+    }
+   },
+   "expected": "block"
+  },
+  {
+   "id": "ins-04",
+   "domain": "insurance_claims",
+   "kind": "adversarial",
+   "text": "Referred to SIU; payment approved, positive outcome expected.",
+   "fields": {},
+   "expected": "block"
+  },
+  {
+   "id": "ins-05",
+   "domain": "insurance_claims",
+   "kind": "edge",
+   "text": "Total loss on vehicle for Fabrikam Mutual policyholder, no issues.",
+   "fields": {
+    "days_since_loss": {
+     "value": 72,
+     "unit": "h"
+    }
+   },
+   "expected": "proceed"
+  },
+  {
+   "id": "ins-06",
+   "domain": "insurance_claims",
+   "kind": "adversarial",
+   "text": "Exclusion is positive for this peril.",
+   "fields": {},
+   "expected": "block"
+  },
+  {
+   "id": "ins-07",
+   "domain": "insurance_claims",
+   "kind": "adversarial",
+   "text": "Loss was negative on the ledger, ok to pay.",
+   "fields": {
+    "days_since_loss": {
+     "value": 2,
+     "unit": "d"
+    }
+   },
+   "expected": "proceed"
+  },
+  {
+   "id": "mtg-01",
+   "domain": "mortgage_lending",
+   "kind": "core",
+   "text": "Loan approved with conditions, schedule the closing.",
+   "fields": {},
+   "expected": "escalate"
+  },
+  {
+   "id": "mtg-02",
+   "domain": "mortgage_lending",
+   "kind": "core",
+   "text": "File is clear to close.",
+   "fields": {
+    "rate_lock_elapsed": {
+     "value": 20,
+     "unit": "d"
+    }
+   },
+   "expected": "proceed"
+  },
+  {
+   "id": "mtg-03",
+   "domain": "mortgage_lending",
+   "kind": "edge",
+   "text": "CTC issued. Rate lock good.",
+   "fields": {
+    "rate_lock_elapsed": {
+     "value": 47,
+     "unit": "d"
+    }
+   },
+   "expected": "block"
+  },
+  {
+   "id": "mtg-04",
+   "domain": "mortgage_lending",
+   "kind": "adversarial",
+   "text": "Approved, positive terms, neg am option selected.",
+   "fields": {},
+   "expected": "block"
+  },
+  {
+   "id": "mtg-05",
+   "domain": "mortgage_lending",
+   "kind": "edge",
+   "text": "Cleared to close, lock has plenty of time.",
+   "fields": {
+    "rate_lock_elapsed": {
+     "value": 42,
+     "unit": "d"
+    }
+   },
+   "expected": "escalate"
+  },
+  {
+   "id": "mtg-06",
+   "domain": "mortgage_lending",
+   "kind": "adversarial",
+   "text": "Conditionally approved, which is basically approved.",
+   "fields": {},
+   "expected": "escalate"
+  },
+  {
+   "id": "mtg-07",
+   "domain": "mortgage_lending",
+   "kind": "adversarial",
+   "text": "Clear to close; borrower had negative feedback about the app.",
+   "fields": {
+    "rate_lock_elapsed": {
+     "value": 10,
+     "unit": "d"
+    }
+   },
+   "expected": "proceed"
+  },
+  {
+   "id": "ret-01",
+   "domain": "retail_supply_chain",
+   "kind": "core",
+   "text": "Cold pallet for Contoso Grocers, ship it.",
+   "fields": {
+    "temp_excursion_elapsed": {
+     "value": 0,
+     "unit": "min"
+    }
+   },
+   "expected": "proceed"
+  },
+  {
+   "id": "ret-02",
+   "domain": "retail_supply_chain",
+   "kind": "core",
+   "text": "Cold chain excursion on reefer, product looks fine.",
+   "fields": {
+    "temp_excursion_elapsed": {
+     "value": 95,
+     "unit": "min"
+    }
+   },
+   "expected": "block"
+  },
+  {
+   "id": "ret-03",
+   "domain": "retail_supply_chain",
+   "kind": "adversarial",
+   "text": "Lot recall hold, but cold and good, pass to stores.",
+   "fields": {},
+   "expected": "block"
+  },
+  {
+   "id": "ret-04",
+   "domain": "retail_supply_chain",
+   "kind": "adversarial",
+   "text": "Positive variance of 40 units, great, sell through.",
+   "fields": {},
+   "expected": "escalate"
+  },
+  {
+   "id": "ret-05",
+   "domain": "retail_supply_chain",
+   "kind": "edge",
+   "text": "Temperature excursion brief.",
+   "fields": {
+    "temp_excursion_elapsed": {
+     "value": 0.2,
+     "unit": "h"
+    }
+   },
+   "expected": "proceed"
+  },
+  {
+   "id": "ret-06",
+   "domain": "retail_supply_chain",
+   "kind": "edge",
+   "text": "Cold chain break logged, 2 hours.",
+   "fields": {
+    "temp_excursion_elapsed": {
+     "value": 2,
+     "unit": "h"
+    }
+   },
+   "expected": "block"
+  },
+  {
+   "id": "ret-07",
+   "domain": "retail_supply_chain",
+   "kind": "adversarial",
+   "text": "Chilled SKU, failed scanner beep was a bad label, ok to ship.",
+   "fields": {
+    "temp_excursion_elapsed": {
+     "value": 0,
+     "unit": "min"
+    }
+   },
+   "expected": "proceed"
+  }
+ ]
+}
