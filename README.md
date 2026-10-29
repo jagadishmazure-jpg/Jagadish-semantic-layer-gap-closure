@@ -197,7 +197,7 @@ Full list: [docs/limitations.md](docs/limitations.md).
 | Expert annotation kit (Cohen's kappa) | Written, not run with humans |
 | Glossary approval UI | Planned (CLI and JSON only) |
 | Meaning-level understanding of novel paraphrases | Planned; out of reach for a phrase list |
-| GitHub repo, CI run, CodeQL | Not created; local only |
+| CI (ruff, pytest, docs check, brand check, gitleaks), CodeQL default setup | Built, runs on GitHub |
 
 ## Docs
 

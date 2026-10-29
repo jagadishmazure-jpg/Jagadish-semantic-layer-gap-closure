@@ -1,11 +1,7 @@
 version: 2
 updates:
-  - package-ecosystem: pip
-    directory: /
-    schedule: {interval: weekly}
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-major"]
+  # Runtime code is standard-library only (requirements-dev.txt pins test tools), so only
+  # GitHub Actions versions are tracked here.
   - package-ecosystem: github-actions
     directory: /
     schedule: {interval: weekly}
